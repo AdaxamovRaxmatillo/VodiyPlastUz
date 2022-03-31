@@ -17,7 +17,7 @@
 			        	<a>
 			        		<picture>
 								 <source srcset="../staticfiles/images/header/banner1.png" media="(min-width: 768px)">
-								 <img src="../staticfiles/images/header/banner1m.png" >
+								 <img class="mobile_banner_img" src="../staticfiles/images/header/banner1m.png">
 							</picture>
 			        	</a>
 			        	<div class="banner_curtain">
@@ -28,7 +28,7 @@
 			        	<a>
 			        		<picture>
 								 <source srcset="../staticfiles/images/header/banner2.png" media="(min-width: 768px)">
-								 <img src="../staticfiles/images/header/banner2m.png" >
+								 <img class="mobile_banner_img" src="../staticfiles/images/header/banner2m.png" >
 							</picture>
 			        	</a>
 			        	<div class="banner_curtain">
@@ -39,7 +39,7 @@
 			        	<a>
 			        		<picture>
 								 <source srcset="../staticfiles/images/header/banner3.png" media="(min-width: 768px)">
-								 <img src="../staticfiles/images/header/banner3m.png" >
+								 <img class="mobile_banner_img" src="../staticfiles/images/header/banner3m.png" >
 							</picture>
 			        	</a>
 			        	<div class="banner_curtain">
@@ -65,6 +65,10 @@
 								<option>Uz</option>
 							</select>
 						</div>
+						<div class="navbar_control" onclick="controlnavbar()">
+							<div class="line"></div>
+							<div class="line"></div>
+						</div>
 					</div>
 					<div class="navbar_right_items">
 						<ul>
@@ -88,11 +92,21 @@
 								<a class="link_top">Контакты</a>
 								<a class="link_bottom">Контакты</a>
 							</li>
+							<li class="language_mobile">
+								<select>
+									<option selected>Рус</option>
+									<option>En</option>
+									<option>Uz</option>
+								</select>
+							</li>
 						</ul>
 					</div>
 				</nav>
 			</div>
 		</section>
+		<div class="curtain_navbar">
+			
+		</div>
 	</header>
 	<main class="main" id="main">
 		<h1>

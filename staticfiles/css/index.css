@@ -91,7 +91,7 @@ a:hover{color:inherit;}
   left:0;
   border-bottom: 1px solid white;
   background: transparent;
-  z-index: 1; 
+  z-index: 2; 
 }
 
 .navbar_container{
@@ -113,6 +113,8 @@ a:hover{color:inherit;}
   justify-content: space-between;
   align-items: center;
 }
+
+.navbar_logo,.language_desktop,.navbar_control{width: auto;}
 
 .navbar_logo a img{
   width:65px;
@@ -167,6 +169,53 @@ a:hover{color:inherit;}
 
 }
 
+.navbar_control{
+  width:40px;
+  height:40px;
+  background: #FFCC01;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.line{
+  width:60%;
+  height:2.5px;
+  background: white;
+}
+.line:nth-child(2){
+  margin-top:4px;
+}
+
+
+
+.language_mobile select{
+  width:100%;
+  background: transparent;
+  color: white;
+  outline: none;
+  font-family: buyan;
+  font-size: 23px;
+  border: none;
+}
+
+.language_mobile select option{
+  background: black;
+}
+
+.curtain_navbar{
+  position: absolute;
+  width:100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  top:0;
+  left:0;
+  display: none;
+}
 /* endheader */
 
 
@@ -212,11 +261,43 @@ a:hover{color:inherit;}
     height:120vw;
   }
   .navbar_container{
-    height:80px;
+    height:auto;
   }
   .navbar_logo a img{
     width:60px;
   }
+  .navbar_section{
+    border-bottom: none;
+  }
+  .navbar_container{
+    flex-direction: column;
+    align-items: inherit;
+    justify-content: inherit;
+  }
+  .language_desktop{
+    display: none;
+  }
+  .navbar_right_items{-moz-transition: height .5s;
+                      -ms-transition: height .5s;
+                      -o-transition: height .5s;
+                      -webkit-transition: height .5s;
+                      transition: height .5s;
+                      height: 0;
+                      overflow: hidden;}
+  .navbar_right_items ul{
+    padding-bottom: 1px;
+  }
+  .navbar_right_items ul li a{
+    width: 100%;
+  }
+  .navbar_right_items ul li{
+    display: block;
+    margin-bottom:20px;
+    padding: 0;
+  }
+  .navbar_left_items{
+    min-height:80px;
+   }
   /* end max 768px */
 }
  
@@ -262,6 +343,12 @@ a:hover{color:inherit;}
   .container_lgf{width:99%;}
   .container_mdf{width:95%;}
   .container_smf{width:90%;}
+  .navbar_control{
+    display: none;
+  }
+  .language_mobile{
+    display: none !important;
+  }
   /* end min 768px */
 }
 
