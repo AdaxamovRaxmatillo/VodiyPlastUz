@@ -9,6 +9,11 @@ html {
 }
 
 @font-face {
+  font-family: 'light-buyan';
+  src: url('../fonts/BuyanThin-L3AW4.ttf');
+}
+
+@font-face {
   font-family: 'gilroy';
   src: url('../fonts/Gilroy-Regular.ttf');
 }
@@ -236,6 +241,16 @@ a:hover{color:inherit;}
   border-right: 5px solid white;
 }
 
+.circle_in{
+  width:100%;
+  height:100%;
+  border-radius: 50%;
+  transform:rotate(35deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
 .control_back_counter{
   position: absolute;
   width:200px;
@@ -247,6 +262,107 @@ a:hover{color:inherit;}
   display: flex;
   align-items: center;
 }
+
+.counter_number{
+  font-family: buyan;
+  color:black;
+  font-size:100px;
+  overflow: hidden;
+
+}
+
+.counter_pointer{
+  position: absolute;
+  color: white;
+  font-size:80px;
+  cursor: pointer;
+  transform: translateY(10px) translateX(10px) rotate(45deg);
+}
+
+.header_to_down{
+  color: white;
+  position: absolute;
+  bottom:50px;
+  width:100%;
+  z-index: 1; 
+}
+
+.down_circle{
+  width:50px;
+  height:50px;
+  background: #FFCC01;
+  border-radius: 50%;
+  font-size:25px;
+  color:black;
+  transition-property: padding-top;
+  transition: 0.5s;
+}
+
+.down_circle:hover{
+  padding-top:10px;
+  color: white;
+}
+
+.down_circle a{
+  display: block;
+  width: 100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.banner_contents{
+  width:100%;
+  height:100%;
+  position: relative;
+  }
+
+.banner_about{
+  position: absolute;
+  top:45%;
+  width: 100%;
+  height: auto;
+}
+.banner_about div p{
+  font-size:15vw;
+  color: white;
+  font-family: buyan;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.system_text_about_system{
+  position: absolute;
+  bottom:50px;  
+}
+
+.banner_bottom_texts{
+  display: flex;
+  justify-content: flex-end;
+}
+.system_text,.about_system_text{
+  width: auto;
+  color: white;
+}
+
+.system_text{
+  margin-right:30%;
+  display: flex;
+  align-items: flex-end;
+  font-family: gilroy;
+  font-size:25px;
+}
+
+.about_system_text{
+  text-align: right;
+  font-family: buyan;
+  font-size:80px;
+}
+
+
+
 
 /* endheader */
 
@@ -267,6 +383,9 @@ a:hover{color:inherit;}
   width:170px;
   height:360px;
   }
+  .system_text{font-size:22px; margin-right: 25%;}
+
+  .about_system_text{font-size:70px;}
   /* end max 1300px */
 }
 
@@ -283,6 +402,20 @@ a:hover{color:inherit;}
   .banner_swiper_slides a img{
     height:80vw;
   }
+  .banner_about{
+    top:25%;
+  }
+  .system_text_about_system{
+    top:48%;
+  }
+  .banner_bottom_texts{
+    flex-direction: column-reverse;
+  }
+  .system_text,.about_system_text{
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
   /* end max 1100px */
 }
 
@@ -344,6 +477,23 @@ a:hover{color:inherit;}
   .navbar_left_items{
     min-height:80px;
    }
+   .banner_about{
+    display: none;
+  }
+  .system_text_about_system{
+    top:20%;
+    bottom: 100px;
+  }
+  .system_text_about_system .container_lg{
+    height: 100%;
+  }
+  .banner_bottom_texts{
+    height: 100%;
+    justify-content: space-between;
+  }
+  .system_text{font-size:20px;}
+
+  .about_system_text{font-size:60px;}
   /* end max 768px */
 }
  
@@ -357,6 +507,7 @@ a:hover{color:inherit;}
 
 @media(max-width: 400px){
   /* start max 400px */
+  .system_text{font-size:17px;}
   /* end max 400px */
 } 
 
@@ -459,6 +610,16 @@ a:hover{color:inherit;}
   width:230px;
   height:510px;
   }
+  .counter_number{
+  font-size:105px;
+  }
+
+.counter_pointer{
+  font-size:85px;
+  }
+  .system_text{font-size:28px;}
+
+  .about_system_text{font-size:87px;}
   /* end min 1650px */
 }
 
@@ -490,5 +651,15 @@ a:hover{color:inherit;}
   width:250px;
   height:550px;
   }
+  .counter_number{
+  font-size:110px;
+  }
+
+.counter_pointer{
+  font-size:90px;
+  }
+.system_text{font-size:32px;}
+
+.about_system_text{font-size:95px;}
   /* end min 1900px */
 }

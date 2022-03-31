@@ -1,14 +1,38 @@
 /* START BANNER  */
 var bannerswiper = new Swiper(".banner_swiper", {
     slideToClickedSlide: false,
-    effect: "fade"
+    effect: "fade",
+    loop:true,
+    // autoplay: {
+    //       delay: 2500,
+    //       disableOnInteraction: false,
+    //     },
+
 });
 
-// document.body.onclick = function(){
 
-// bannerswiper.slideTo(5)
 
-// }
+let swnum = 1;
+function swipercontrol(){
+    swnum++
+    if(swnum >= 5){swnum = 1}
+    bannerswiper.slideTo(swnum-1)
+}
+
+bannerswiper.on('slideChangeTransitionEnd', function() {
+  let index_currentSlide = bannerswiper.realIndex;
+
+  arr = [     
+                "circle","circle for_border_bottom","circle for_border_bottom for_border_left","circle for_border_bottom for_border_left for_border_top"
+            ]
+    let circle = document.querySelector(".circle");
+    let counter = document.querySelector(".counter_number");
+
+    counter.innerHTML = `<span>${index_currentSlide+1}</span>`
+    circle.classList = `${arr[index_currentSlide]}`
+
+  
+});
 
 
 /* END BANNER  */
@@ -52,11 +76,6 @@ function controlnavbar(){
 
 /* END NAVBAR CONTROLR */
 
-// swiper.on('slideChangeTransitionEnd', function() {
-//   let index_currentSlide = swiper.realIndex;
-//   let currentSlide = swiper.slides[index_currentSlide]
-//   console.log(currentSlide)
-// });
 
 
 /* OTHER CODE */
