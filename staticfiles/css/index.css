@@ -508,6 +508,7 @@ a:hover{color:inherit;}
 @media(max-width: 400px){
   /* start max 400px */
   .system_text{font-size:17px;}
+  .about_system_text{font-size:50px;}
   /* end max 400px */
 } 
 
