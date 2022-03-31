@@ -361,8 +361,64 @@ a:hover{color:inherit;}
   font-size:80px;
 }
 
+.swiper_mobile_control{
+  position: absolute;
+  bottom: 5px;
+  width:100%;
+  height: auto;
+  z-index: 1;
+  display: none;
+}
 
+.mobile_control_block{
+  padding: 45px 20px 35px 20px;
+  width:300px;
+  max-width: calc(100% - 90px);
+  background:#FFCC01;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.swiper_mobile_counter,.swiper_mobile_ponters{width: auto;}
+
+.swiper_mobile_ponters{display: flex;}
+
+.swiper_mobile_ponters div{
+  width:50px;
+  height:50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:28px;
+  padding-top: 2px;
+  transition-property:padding-left,padding-right;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.swiper_mobile_ponters div:nth-child(1){
+  margin-right: 20px;
+}
+
+.swiper_mobile_ponters div:nth-child(1):hover{
+  padding-right:5px;
+  color:#FFCC01;
+}
+
+.swiper_mobile_ponters div:nth-child(2):hover{
+  padding-left:5px;
+  color:#FFCC01;
+}
+
+.swiper_mobile_counter{
+  font-family: buyan;
+  font-size: 25px;
+}
 
 /* endheader */
 
@@ -393,6 +449,15 @@ a:hover{color:inherit;}
   /* start max 1200px */
   .swiper_control_section{
    display: none;
+  }
+  .swiper_mobile_control{
+    display: block;
+  }
+  .banner_about{
+    top:30%;
+  }
+  .system_text_about_system{
+    top:55%;
   }
   /* end max 1200px */
 } 
@@ -494,6 +559,13 @@ a:hover{color:inherit;}
   .system_text{font-size:20px;}
 
   .about_system_text{font-size:60px;}
+
+  .system_text_about_system{
+    bottom:130px;
+  }
+  .header_to_down{
+    bottom: 30px;
+  }
   /* end max 768px */
 }
  
@@ -502,13 +574,19 @@ a:hover{color:inherit;}
   .banner_swiper_slides a img{
     height:auto;
   }
+  .mobile_control_block{
+  padding: 40px 20px 30px 20px;
+  }
   /* end max 576px */
 }
 
 @media(max-width: 400px){
   /* start max 400px */
   .system_text{font-size:17px;}
-  .about_system_text{font-size:50px;}
+  .about_system_text{font-size:55px;}
+  .mobile_control_block{
+    padding: 30px 20px 25px 20px;
+  }
   /* end max 400px */
 } 
 
