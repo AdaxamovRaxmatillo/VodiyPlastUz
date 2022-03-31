@@ -91,7 +91,7 @@ a:hover{color:inherit;}
   left:0;
   border-bottom: 1px solid white;
   background: transparent;
-  z-index: 2; 
+  z-index: 3; 
 }
 
 .navbar_container{
@@ -211,11 +211,43 @@ a:hover{color:inherit;}
   width:100%;
   height:100%;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+  z-index: 2;
   top:0;
   left:0;
   display: none;
 }
+
+.swiper_control_section{
+  right:50%;
+  top:0;
+  position: absolute;
+  width:auto;
+  height:auto;
+  z-index:1;
+}
+
+.circle{
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  border:3px solid gray;
+  position: relative;
+  transform: translateY(10%) rotate(-35deg);
+  border-right: 5px solid white;
+}
+
+.control_back_counter{
+  position: absolute;
+  width:200px;
+  height:430px;
+  background:#FFCC01;
+  top: 0;
+  left:21.5%;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+}
+
 /* endheader */
 
 
@@ -224,11 +256,25 @@ a:hover{color:inherit;}
 
 @media(max-width: 1300px){
   /* start max 1300px */
+  .swiper_control_section{
+    right:58%;
+  }
+  .circle{width:300px;
+          height:300px;
+  }
+
+.control_back_counter{
+  width:170px;
+  height:360px;
+  }
   /* end max 1300px */
 }
 
 @media(max-width: 1200px){
   /* start max 1200px */
+  .swiper_control_section{
+   display: none;
+  }
   /* end max 1200px */
 } 
 
@@ -405,6 +451,14 @@ a:hover{color:inherit;}
   .navbar_right_items ul li{
     font-size:30px;
   }
+  .circle{width:420px;
+          height:420px;
+  }
+
+.control_back_counter{
+  width:230px;
+  height:510px;
+  }
   /* end min 1650px */
 }
 
@@ -427,6 +481,14 @@ a:hover{color:inherit;}
   }
   .navbar_right_items ul li{
     font-size:35px;
+  }
+  .circle{width:450px;
+          height:450px;
+  }
+
+.control_back_counter{
+  width:250px;
+  height:550px;
   }
   /* end min 1900px */
 }

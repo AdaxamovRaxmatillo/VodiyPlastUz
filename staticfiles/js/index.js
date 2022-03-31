@@ -4,6 +4,13 @@ var bannerswiper = new Swiper(".banner_swiper", {
     effect: "fade"
 });
 
+// document.body.onclick = function(){
+
+// bannerswiper.slideTo(5)
+
+// }
+
+
 /* END BANNER  */
 
 /* START NAVBAR CONTROLR */
