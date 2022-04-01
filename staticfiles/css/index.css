@@ -569,7 +569,13 @@ a:hover{color:inherit;}
   position: relative;
   text-align: center;
   width:65%;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition-property: transform,opacity;
+  transition: 1s ease;
 }
+
+
 
 .category_under_img_block a img{width:100%;}
 
@@ -590,6 +596,10 @@ a:hover{color:inherit;}
   font-family: buyan;
   font-size:55px;
   margin-left:-13%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition-property: transform,opacity;
+  transition: 3s ease;
 }
 
 /* end main */

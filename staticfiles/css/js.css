@@ -8,3 +8,12 @@
 .for_border_top{
 	border-top:5px solid white !important;
 }
+.for_category_under{
+	transform: translateY(0%) !important;
+	opacity: 1 !important;
+}
+
+.for_category_under_text p:nth-child(2){
+	transform: translateY(0%) !important;
+	opacity: 1 !important;
+}

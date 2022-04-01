@@ -44,6 +44,39 @@ bannerswiper.on('slideChangeTransitionEnd', function() {
 
 /* END BANNER  */
 
+/* START SCROLL ANIMATIONS */
+
+let under_carts = document.querySelectorAll(".category_under_img_block");
+let under_cart_texts = document.querySelectorAll(".category_under_img_text")
+window.addEventListener("scroll",function(){
+/* START SCROLLING */
+
+    let scroll = window.scrollY
+    under_carts.forEach(function(e,index){
+        let position = e.getBoundingClientRect();
+        let wheight = window.innerHeight;
+        let num = 0
+        if(window.innerWidth <= 992){
+          num = 150  
+        }else{
+          num = 250
+        }
+        if(position.top <= wheight - num){
+            e.classList = "category_under_img_block for_category_under"
+            under_cart_texts[index].classList = "category_under_img_text for_category_under_text"
+            }
+        else{
+            e.classList = "category_under_img_block"
+             under_cart_texts[index].classList = "category_under_img_text"
+        }
+    })
+
+/* END SCROLLING */
+})
+
+/* END SCROLL ANIMATIONS */
+
+
 /* START NAVBAR CONTROLR */
 
 let navnum = 0;
