@@ -10,18 +10,16 @@ var bannerswiper = new Swiper(".banner_swiper", {
 
 });
 
-
-
 let swnum = 1;
 function swipercontrol(){
     swnum++
-    if(swnum >= 5){swnum = 1}
+    if(swnum >= 4){swnum = 1}
     bannerswiper.slideTo(swnum)
 }
 
 function swipercontroldecriment(){
     swnum--
-    if(swnum <= 0){swnum = 4}
+    if(swnum <= 0){swnum = 3}
     bannerswiper.slideTo(swnum)
 }
 
@@ -33,10 +31,12 @@ bannerswiper.on('slideChangeTransitionEnd', function() {
             ]
     let circle = document.querySelector(".circle");
     let counter = document.querySelector(".counter_number");
+    let counter_small = document.querySelector(".counter_number_small");
     let counter_mobile = document.querySelector(".swiper_mobile_counter");
     counter.innerHTML = `<span>${index_currentSlide+1}</span>`
     circle.classList = `${arr[index_currentSlide]}`
-    counter_mobile.innerHTML = `<p>${index_currentSlide+1}/4</p>`
+    counter_mobile.innerHTML = `<p>${index_currentSlide+1}/3</p>`
+    counter_small.innerHTML = `<p>${index_currentSlide+1}/3</p>`
 
   
 });
