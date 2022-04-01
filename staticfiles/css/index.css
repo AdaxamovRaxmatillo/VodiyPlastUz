@@ -602,6 +602,20 @@ a:hover{color:inherit;}
   transition: 3s ease;
 }
 
+.section_main_carousel{
+  margin-top:4%;
+  padding-right:5%;
+}
+
+.carousel_text_block{
+  text-align: right;
+}
+
+.carousel_text_block p{
+  font-size:11vw;
+  font-family: buyan;
+}
+
 /* end main */
 
 

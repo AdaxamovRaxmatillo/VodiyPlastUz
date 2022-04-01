@@ -77,6 +77,11 @@ window.addEventListener("scroll",function(){
 /* END SCROLL ANIMATIONS */
 
 
+/* START MAIN CAROUSEL */
+
+
+/* END MAIN CAROUSEL */
+
 /* START NAVBAR CONTROLR */
 
 let navnum = 0;
