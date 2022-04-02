@@ -76,6 +76,45 @@ window.addEventListener("scroll",function(){
 
 /* END SCROLL ANIMATIONS */
 
+var mainswiper1 = new Swiper(".main_swiper_img",{
+    effect:"fade",
+    autoplay: {
+          delay:3000,
+          disableOnInteraction: false,
+    },
+
+})
+
+var maintextwiper = new Swiper(".text_swiper",{
+    spaceBetween:10,
+})
+
+let msnum = 0;
+let main_control_circle = document.querySelector(".main_swiper_circle");
+arr_black = [     
+        "main_swiper_circle","main_swiper_circle for_border_bottom_black","main_swiper_circle for_border_bottom_black for_border_left_black","main_swiper_circle for_border_bottom_black for_border_left_black for_border_top_black"
+        ]
+function change_main_carousel(){
+    msnum++
+    if(msnum >= document.querySelectorAll(".main_swiper_slide").length){msnum = 0}
+    mainswiper1.slideTo(msnum)
+}
+
+
+mainswiper1.on('slideChangeTransitionEnd', function() {
+  
+  let index_currentSlide = mainswiper1.realIndex;
+  maintextwiper.slideTo(index_currentSlide);
+  document.querySelector(".main_swiper_counter").innerHTML = `<span>${index_currentSlide+1}</span>`
+  document.querySelector(".main_counter_number_small").innerHTML = `${index_currentSlide+1}/2`
+  main_control_circle.classList = `${arr_black[index_currentSlide]}`
+});
+
+maintextwiper.on('slideChangeTransitionEnd', function() {
+  let index_currentSlide = maintextwiper.realIndex;
+  mainswiper1.slideTo(index_currentSlide);
+});
+
 
 /* START MAIN CAROUSEL */
 
