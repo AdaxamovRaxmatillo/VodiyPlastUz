@@ -1,4 +1,4 @@
-.for_border_bottom{
+/* .for_border_bottom{
 	border-bottom: 5px solid white !important;
 }
 .for_border_left{
@@ -7,7 +7,7 @@
 
 .for_border_top{
 	border-top:5px solid white !important;
-}
+} */
 .for_category_under{
 	transform: translateY(0%) !important;
 	opacity: 1 !important;
@@ -28,3 +28,5 @@
 .for_border_top_black{
 	border-top:5px solid black !important;
 }
+
+

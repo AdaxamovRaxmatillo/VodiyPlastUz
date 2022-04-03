@@ -10,36 +10,52 @@ var bannerswiper = new Swiper(".banner_swiper", {
 
 });
 
+
+let banner_len = document.querySelectorAll(".banner_swiper_slides").length-2;
+
+let banner_len_percent = 100/banner_len;
+
 let swnum = 1;
+document.querySelector(".progress_1").setAttribute("data-value",banner_len_percent)
+
+let counter_small = document.querySelector(".counter_number_small");
+let counter_mobile = document.querySelector(".swiper_mobile_counter");
+    
+counter_mobile.innerHTML = `<p>1/${banner_len}</p>`
+counter_small.innerHTML = `<p>1/${banner_len}</p>`
+
 function swipercontrol(){
     swnum++
-    if(swnum >= 4){swnum = 1}
+    if(swnum >= banner_len+1){swnum = 1}
     bannerswiper.slideTo(swnum)
+    
 }
 
 function swipercontroldecriment(){
     swnum--
-    if(swnum <= 0){swnum = 3}
+    if(swnum <= 0){swnum = banner_len}
     bannerswiper.slideTo(swnum)
 }
 
-bannerswiper.on('slideChangeTransitionEnd', function() {
-  let index_currentSlide = bannerswiper.realIndex;
+ var bar1 = new ldBar(".progress_1",{
+     "stroke": '#fff',
+     "stroke-width": 1,
+ });
 
-  arr = [     
-                "circle","circle for_border_bottom","circle for_border_bottom for_border_left","circle for_border_bottom for_border_left for_border_top"
-            ]
-    let circle = document.querySelector(".circle");
+ document.querySelector(".progress_1").ldBar
+
+bannerswiper.on('slideChangeTransitionEnd', function() {
+    let index_currentSlide = bannerswiper.realIndex;
+    bar1.set(banner_len_percent * (index_currentSlide+1))
     let counter = document.querySelector(".counter_number");
     let counter_small = document.querySelector(".counter_number_small");
     let counter_mobile = document.querySelector(".swiper_mobile_counter");
     counter.innerHTML = `<span>${index_currentSlide+1}</span>`
-    circle.classList = `${arr[index_currentSlide]}`
-    counter_mobile.innerHTML = `<p>${index_currentSlide+1}/3</p>`
-    counter_small.innerHTML = `<p>${index_currentSlide+1}/3</p>`
 
-  
-});
+    counter_mobile.innerHTML = `<p>${index_currentSlide+1}/${banner_len}</p>`
+    counter_small.innerHTML = `<p>${index_currentSlide+1}/${banner_len}</p>`
+
+  });
 
 
 /* END BANNER  */
@@ -89,25 +105,41 @@ var maintextwiper = new Swiper(".text_swiper",{
     spaceBetween:10,
 })
 
+let main_swiper_len = document.querySelectorAll(".main_swiper_slide").length;
+let main_swiper_len_percent = 100/main_swiper_len
+let main_bar = document.querySelector(".progress_2");
+main_bar.setAttribute("data-value",main_swiper_len_percent)
+
+document.querySelector(".main_counter_number_small").innerHTML = `1/${main_swiper_len}`
+
+document.querySelector(".main_mobile_counter").innerHTML = `1/${main_swiper_len}`
+
+var bar2 = new ldBar(".progress_2",{
+    "stroke": '#000',
+    "stroke-width": 1,
+})
+
 let msnum = 0;
-let main_control_circle = document.querySelector(".main_swiper_circle");
-arr_black = [     
-        "main_swiper_circle","main_swiper_circle for_border_bottom_black","main_swiper_circle for_border_bottom_black for_border_left_black","main_swiper_circle for_border_bottom_black for_border_left_black for_border_top_black"
-        ]
+
 function change_main_carousel(){
     msnum++
-    if(msnum >= document.querySelectorAll(".main_swiper_slide").length){msnum = 0}
+    if(msnum >= main_swiper_len){msnum = 0}
     mainswiper1.slideTo(msnum)
 }
 
+function change_main_decriment(){
+    msnum--
+    if(msnum <= 0){msnum = main_swiper_len-1}
+    mainswiper1.slideTo(msnum)
+}
 
 mainswiper1.on('slideChangeTransitionEnd', function() {
-  
   let index_currentSlide = mainswiper1.realIndex;
   maintextwiper.slideTo(index_currentSlide);
   document.querySelector(".main_swiper_counter").innerHTML = `<span>${index_currentSlide+1}</span>`
-  document.querySelector(".main_counter_number_small").innerHTML = `${index_currentSlide+1}/2`
-  main_control_circle.classList = `${arr_black[index_currentSlide]}`
+  document.querySelector(".main_counter_number_small").innerHTML = `${index_currentSlide+1}/${main_swiper_len}`
+  document.querySelector(".main_mobile_counter").innerHTML = `${index_currentSlide+1}/${main_swiper_len}`
+  bar2.set(main_swiper_len_percent * (index_currentSlide+1))
 });
 
 maintextwiper.on('slideChangeTransitionEnd', function() {
@@ -115,11 +147,6 @@ maintextwiper.on('slideChangeTransitionEnd', function() {
   mainswiper1.slideTo(index_currentSlide);
 });
 
-
-/* START MAIN CAROUSEL */
-
-
-/* END MAIN CAROUSEL */
 
 /* START NAVBAR CONTROLR */
 
@@ -158,6 +185,8 @@ function controlnavbar(){
   x.addListener(media1)
 }
 
+
+
 /* END NAVBAR CONTROLR */
 
 
@@ -192,3 +221,4 @@ function controlnavbar(){
 //   let currentSlide = galleryThumbs.slides[index_currentSlide]
 //   galleryTop.slideTo(index_currentSlide, 1000, false);
 // });
+
