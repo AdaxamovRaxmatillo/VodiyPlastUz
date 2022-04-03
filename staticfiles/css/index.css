@@ -884,6 +884,9 @@ a:hover{color:inherit;}
     color: white;
     padding-left:1.5%;
   }
+  .carousel_text_block_bottom{
+    margin-bottom: -4%;
+  }
   .carousel_text_block:first-line{
     color: black;
   }
@@ -978,6 +981,9 @@ a:hover{color:inherit;}
     padding-left: 0;
     margin-top:10%;
   }
+
+
+
   .main_swiper_text{padding: 0;}
   .main_swiper_text_slide{
         font-size:20px;
@@ -995,9 +1001,14 @@ a:hover{color:inherit;}
     padding-left: 0;
   }
   .factory_numbers{
-    padding-left:3%;
     display: flex;
     padding-top: 0%;
+  }
+  .factory_numbers .number_text{
+    padding-top:3%;
+    padding-bottom:3%;
+    padding-left:3%;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
   }
   .number_text_bottom{
     padding-left: 3%;

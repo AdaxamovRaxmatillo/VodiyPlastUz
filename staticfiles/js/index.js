@@ -151,7 +151,7 @@ var maintextwiper = new Swiper(".text_swiper",{
     spaceBetween:10,
 })
 
-let main_swiper_len = document.querySelectorAll(".main_swiper_slide").length;
+let main_swiper_len = document.querySelectorAll(".clen").length;
 let main_swiper_len_percent = 100/main_swiper_len
 let main_bar = document.querySelector(".progress_2");
 main_bar.setAttribute("data-value",main_swiper_len_percent)
@@ -177,7 +177,7 @@ function change_main_decriment(){
     msnum--
     if(msnum <= -1){msnum = main_swiper_len-1}
     mainswiper1.slideTo(msnum)
-    console.log(msnum)
+
 }
 
 
@@ -271,3 +271,63 @@ function controlnavbar(){
 //   galleryTop.slideTo(index_currentSlide, 1000, false);
 // });
 
+var mainswiper2 = new Swiper(".main_swiper_img2",{
+    effect:"fade",
+    autoplay: {
+          delay:3000,
+          disableOnInteraction: false,
+    },
+
+})
+
+var maintextwiper2 = new Swiper(".text_swiper2",{
+    spaceBetween:10,
+})
+
+
+var bar3 = new ldBar(".progress_3",{
+ "stroke": '#000',
+ "stroke-width": 1,
+});
+
+let flen = document.querySelectorAll(".flen").length;
+
+let fpercent = 100/flen;
+
+document.querySelector(".progress_3").ldBar
+
+bar3.set(fpercent)
+
+let fswnum = 1;
+
+function fswipercontrol(){
+    fswnum++
+    if(fswnum >= flen){fswnum = 0}
+    mainswiper2.slideTo(fswnum)
+    
+}
+function fswipercontrol_secriment(){
+    fswnum--
+    if(fswnum <= 0){fswnum = flen-1}
+    mainswiper2.slideTo(fswnum)
+    
+}
+
+document.querySelector(".fcounter").innerHTML = `1/${flen}`
+
+document.querySelector(".fmain_mobile_counter").innerHTML =  `1/${flen}`
+
+mainswiper2.on('slideChangeTransitionEnd', function() {
+  let index_currentSlide = mainswiper2.realIndex;
+  maintextwiper2.slideTo(index_currentSlide);
+  bar3.set(fpercent * (index_currentSlide+1));
+  let fcounter = document.querySelector(".fcounter");
+  fcounter.innerHTML = `${index_currentSlide+1}/${flen}`
+  document.querySelector(".fcounter_big").innerHTML =  `<span>${index_currentSlide+1}</span>`
+  document.querySelector(".fmain_mobile_counter").innerHTML =  `${index_currentSlide+1}/${flen}`
+});
+
+maintextwiper2.on('slideChangeTransitionEnd', function() {
+  let index_currentSlide = maintextwiper2.realIndex;
+  mainswiper2.slideTo(index_currentSlide);
+});
