@@ -66,11 +66,10 @@ let under_carts = document.querySelectorAll(".category_under_img_block");
 let under_cart_texts = document.querySelectorAll(".category_under_img_text")
 window.addEventListener("scroll",function(){
 /* START SCROLLING */
-
+    let wheight = window.innerHeight;
     let scroll = window.scrollY
     under_carts.forEach(function(e,index){
         let position = e.getBoundingClientRect();
-        let wheight = window.innerHeight;
         let num = 0
         if(window.innerWidth <= 992){
           num = 150  
@@ -87,7 +86,54 @@ window.addEventListener("scroll",function(){
         }
     })
 
+    /*counters*/
+    let get_p = document.querySelectorAll(".mcounter");
+    get_p.forEach((e)=>{
+
+        let c_position = e.getBoundingClientRect();
+
+        if(c_position.top <= wheight - 200){   
+            let e_inner = Number(e.innerHTML);
+            if(e_inner < 1){
+                let e_data = Number(e.getAttribute("data"));
+                
+                if(e_data <= 100){
+                    let i = 0;
+                    let int = setInterval(function(){
+                        i++
+                        e.innerHTML = i;
+                        if(i >= e_data ){
+                            clearInterval(int)
+                        }
+                    },100)
+                }
+                else if(e_data <= 1500){
+                    let i = 0;
+                        let int = setInterval(function(){
+                        i+=5
+                        e.innerHTML = i;
+                        if(i >= e_data ){
+                            clearInterval(int)
+                        }
+                        },10)
+                }
+                else{
+                    let i = 0;
+                    let int = setInterval(function(){
+                    i+=200
+                    e.innerHTML = i;
+                    if(i >= e_data ){
+                        clearInterval(int)
+                    }
+                    },10)
+                }
+            }
+
+        }
+
+    })
 /* END SCROLLING */
+
 })
 
 /* END SCROLL ANIMATIONS */
