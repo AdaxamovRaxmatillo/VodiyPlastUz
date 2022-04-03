@@ -129,9 +129,12 @@ function change_main_carousel(){
 
 function change_main_decriment(){
     msnum--
-    if(msnum <= 0){msnum = main_swiper_len-1}
+    if(msnum <= -1){msnum = main_swiper_len-1}
     mainswiper1.slideTo(msnum)
+    console.log(msnum)
 }
+
+
 
 mainswiper1.on('slideChangeTransitionEnd', function() {
   let index_currentSlide = mainswiper1.realIndex;
