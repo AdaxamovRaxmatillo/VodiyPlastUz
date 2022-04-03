@@ -105,7 +105,7 @@ window.addEventListener("scroll",function(){
                         if(i >= e_data ){
                             clearInterval(int)
                         }
-                    },100)
+                    },800)
                 }
                 else if(e_data <= 1500){
                     let i = 0;
