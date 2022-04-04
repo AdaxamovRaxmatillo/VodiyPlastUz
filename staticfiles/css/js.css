@@ -1,13 +1,4 @@
-/* .for_border_bottom{
-	border-bottom: 5px solid white !important;
-}
-.for_border_left{
-	border-left:5px solid white !important;
-}
 
-.for_border_top{
-	border-top:5px solid white !important;
-} */
 .for_category_under{
 	transform: translateY(0%) !important;
 	opacity: 1 !important;
@@ -18,15 +9,7 @@
 	opacity: 1 !important;
 }
 
-.for_border_bottom_black{
-	border-bottom: 5px solid black !important;
+.checked_category{
+	background: #FFCC01 !important;
+	border: 1px solid #FFCC01 !important;
 }
-.for_border_left_black{
-	border-left:5px solid black !important;
-}
-
-.for_border_top_black{
-	border-top:5px solid black !important;
-}
-
-

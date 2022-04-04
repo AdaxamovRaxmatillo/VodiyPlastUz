@@ -331,3 +331,15 @@ maintextwiper2.on('slideChangeTransitionEnd', function() {
   let index_currentSlide = maintextwiper2.realIndex;
   mainswiper2.slideTo(index_currentSlide);
 });
+
+
+function checked_category(e){
+    if(e.className == "category_frames_items"){
+        e.classList = "category_frames_items checked_category"
+        e.querySelector(".category_checked").style = "display:inherit;"
+    }
+    else{
+        e.className = "category_frames_items"
+        e.querySelector(".category_checked").style = "display:none;"
+    }
+}
