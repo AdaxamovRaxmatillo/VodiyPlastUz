@@ -158,6 +158,7 @@ var main_swiper2 = new Swiper(".pg2_swiper2",{
     }
 
 })
+var inswiper_img = new Swiper(".inswiper_img")
 
 let mainsw2num = 0;
 
@@ -170,6 +171,7 @@ var main_text_swiper_mobile = new Swiper(".pg2_swiper2_texts_mobile")
 main_swiper2.on('slideChangeTransitionEnd', function() {
   main_text_swiper.slideTo(this.realIndex)
   main_text_swiper_mobile.slideTo(this.realIndex)
+  inswiper_img.slideTo(this.realIndex)
   mainsw2num = this.realIndex;
 });
 
@@ -178,6 +180,10 @@ main_text_swiper.on("slideChangeTransitionEnd",function(){
 })
 
 main_text_swiper_mobile.on("slideChangeTransitionEnd",function(){
+  main_swiper2.slideTo(this.realIndex)
+})
+
+inswiper_img.on("slideChangeTransitionEnd",function(){
   main_swiper2.slideTo(this.realIndex)
 })
 

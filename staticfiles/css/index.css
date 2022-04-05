@@ -1062,6 +1062,10 @@ a:hover{color:inherit;}
   max-width: 50%;
 }
 
+.carousel_imgs{
+  position: relative;
+}
+
 .pg2_slides2_imgs a img{
   width:100%;
 }
@@ -1144,6 +1148,26 @@ a:hover{color:inherit;}
 .controlvs_name_carousel_mobile{
   display: block !important;
   margin-top:-6px;
+}
+
+.inimgs_swiper{
+  position: absolute;
+  width:100%;
+  height:auto;
+  bottom:10%;
+  left:10%;
+  z-index: 1;
+  color: white;
+}
+
+.inswiper_img{
+  width: 100%;
+  height: auto;
+}
+
+.inswiper_img_slide{
+  font-family: buyan;
+  font-size:38px;
 }
 
 /* end pg2 header */
@@ -1455,7 +1479,7 @@ a:hover{color:inherit;}
   .controlvs_name_carousel_mobile{
     display: flex !important;
     flex-direction: row-reverse;
-    padding: 5% 3% 8% 3%;
+    padding: 5% 5% 8% 5%;
   }
   .custom_control{
     max-width: calc(100% - 100px);
@@ -1473,7 +1497,10 @@ a:hover{color:inherit;}
     width:60px;
     height: 55px;
   }
-
+  .inimgs_swiper{
+    left: 3%;
+    bottom: 3%;
+  }
   /* end max 992px */
 }
 
@@ -1665,6 +1692,9 @@ a:hover{color:inherit;}
     width:55px;
     height: 50px;
   }
+  .inswiper_img_slide{
+  font-size:32px;
+}
 
   /* end max 576px */
 }
@@ -1897,6 +1927,9 @@ a:hover{color:inherit;}
 .pg2_slides2_texts{
   font-size:85px;
 }
+.inswiper_img_slide{
+  font-size:43px;
+}
   /* end min 1650px */
 }
 
@@ -2009,6 +2042,9 @@ a:hover{color:inherit;}
 }
 .pg2_slides2_texts{
   font-size:95px;
+}
+.inswiper_img_slide{
+  font-size:48px;
 }
 
   /* end min 1900px */
