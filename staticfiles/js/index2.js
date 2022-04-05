@@ -92,3 +92,104 @@ maintextwiper.on('slideChangeTransitionEnd', function() {
   let index_currentSlide = maintextwiper.realIndex;
   mainswiper1.slideTo(index_currentSlide);
 });
+
+
+let under_carts = document.querySelectorAll(".category_under_img_block");
+let under_cart_texts = document.querySelectorAll(".category_under_img_text")
+window.addEventListener("scroll",function(){
+/* START SCROLLING */
+let wheight = window.innerHeight;
+/*counters*/
+let get_p = document.querySelectorAll(".pg2_big_counter");
+get_p.forEach((e)=>{
+
+    let c_position = e.getBoundingClientRect();
+
+    if(c_position.top <= wheight - 200){   
+        let e_inner = Number(e.innerHTML);
+        if(e_inner < 1){
+            let e_data = Number(e.getAttribute("data"));
+            
+            if(e_data <= 100){
+                let i = 0;
+                let int = setInterval(function(){
+                    i++
+                    e.innerHTML = i;
+                    if(i >= e_data ){
+                        clearInterval(int)
+                    }
+                },100)
+            }
+            else if(e_data <= 1500){
+                let i = 0;
+                let int = setInterval(function(){
+                i+=5
+                e.innerHTML = i;
+                if(i >= e_data ){
+                    clearInterval(int)
+                }
+                },10)
+            }
+            else{
+                let i = 0;
+                let int = setInterval(function(){
+                i+=200
+                e.innerHTML = i;
+                if(i >= e_data ){
+                    clearInterval(int)
+                }
+                },10)
+            }
+        }
+
+    }
+
+})
+/* END SCROLLING */
+})
+
+/* start main swiper 2*/
+
+var main_swiper2 = new Swiper(".pg2_swiper2",{
+    effect:"fade",
+    autoplay: {
+          delay:3000,
+          disableOnInteraction: false,
+    }
+
+})
+
+let mainsw2num = 0;
+
+let sw2len = document.querySelectorAll(".pg2_slides2_imgs").length;
+
+var main_text_swiper = new Swiper(".pg2_swiper2_texts")
+
+main_swiper2.on('slideChangeTransitionEnd', function() {
+  main_text_swiper.slideTo(this.realIndex)
+  mainsw2num = this.realIndex;
+});
+
+main_text_swiper.on("slideChangeTransitionEnd",function(){
+  main_swiper2.slideTo(this.realIndex)
+})
+
+function toRight(){
+
+    mainsw2num++;
+    if(mainsw2num >= sw2len){
+        mainsw2num = 0;
+    }
+    main_swiper2.slideTo(mainsw2num)
+}
+
+function toLeft(){
+
+    mainsw2num--;
+    if(mainsw2num <= -1){
+        mainsw2num = sw2len-1;
+    }
+    main_swiper2.slideTo(mainsw2num)
+}
+
+/* end main swiper 2 */
