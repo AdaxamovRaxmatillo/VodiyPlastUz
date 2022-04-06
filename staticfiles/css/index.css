@@ -1770,8 +1770,27 @@ a:hover{color:inherit;}
     height: 50px;
   }
   .inswiper_img_slide{
-  font-size:32px;
-}
+    font-size:32px;
+  }
+
+  .career_curtain{
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 3%;
+  }
+  .career_curtain2{
+    flex-direction: column;
+     padding: 3%;
+  }
+  .left_word,.right_word{
+    transform: inherit;
+    text-align: left;
+
+  }
+
+  .left_word p,.right_word p{
+    font-size: 12vw;
+  }
 
   /* end max 576px */
 }
