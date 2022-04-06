@@ -1260,6 +1260,10 @@ a:hover{color:inherit;}
   height:40vw;
 }
 
+.pg3_banner_text{
+  z-index: 1;
+}
+
 
 /* end contact page */
 
@@ -1829,6 +1833,14 @@ a:hover{color:inherit;}
     height: 90vw;
   }
 
+  .pg3_banner_text{
+    margin-bottom:-16%;
+  }
+
+  .pg3_banner_text p{
+    font-size:20vw !important;
+  }
+
   /* end max 576px */
 }
 
@@ -1868,6 +1880,10 @@ a:hover{color:inherit;}
 
 .pg2_slides2_texts{
     font-size:25px;
+  }
+
+.pg3_banner_text{
+    margin-bottom:-20%;
   }
 
   /* end max 400px */
@@ -2063,6 +2079,9 @@ a:hover{color:inherit;}
 .inswiper_img_slide{
   font-size:43px;
 }
+.pg3_banner_text{
+    margin-bottom:-9%;
+  }
   /* end min 1650px */
 }
 
@@ -2179,6 +2198,10 @@ a:hover{color:inherit;}
 .inswiper_img_slide{
   font-size:48px;
 }
+
+.pg3_banner_text{
+    margin-bottom:-8%;
+  }
 
   /* end min 1900px */
 }
