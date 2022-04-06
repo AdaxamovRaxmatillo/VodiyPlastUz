@@ -1239,6 +1239,30 @@ a:hover{color:inherit;}
 
 /* end pg2 header */
 
+/* start contact page */
+
+.pg3_banner_bg{
+  width:100%;
+  height:30vw;
+  background: #828282;
+}
+
+.map_face{
+  position: absolute;
+  width:100%;
+  height:100px;
+  background:#555555;
+  margin-top:-30px;
+}
+
+.google_map{
+  width:100%;
+  height:40vw;
+}
+
+
+/* end contact page */
+
 /* MEDIAS MAX-WIDTH */
 
 @media(max-width: 1300px){
@@ -1398,6 +1422,10 @@ a:hover{color:inherit;}
 
   .pg2_slides2_texts{
     font-size:55px;
+  }
+
+  .pg3_banner_bg{
+    height:50vw;
   }
   /* end max 1100px */
 }
@@ -1568,6 +1596,11 @@ a:hover{color:inherit;}
     left: 3%;
     bottom: 3%;
   }
+
+  .google_map{
+    height: 70vw;
+  }
+
   /* end max 992px */
 }
 
@@ -1790,6 +1823,10 @@ a:hover{color:inherit;}
 
   .left_word p,.right_word p{
     font-size: 12vw;
+  }
+
+   .google_map{
+    height: 90vw;
   }
 
   /* end max 576px */
