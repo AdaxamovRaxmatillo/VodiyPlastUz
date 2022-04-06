@@ -1316,6 +1316,34 @@ a:hover{color:inherit;}
    color: rgba(255, 255, 255, 1);
 }
 
+.contact_img{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.contact_big_phone_number{
+  margin-bottom:-6%;
+  z-index: 1;
+  position: relative;
+}
+
+.contact_big_phone_number p{
+  font-family: buyan;
+  font-size:13vw;
+  color: #FFCC01;
+  text-align: right;
+  margin-top:5%;
+}
+
+.img_block{
+  width:55%;
+}
+
+.img_block a img{
+  width:100%;
+}
+
 /* end contact page */
 
 /* MEDIAS MAX-WIDTH */
@@ -1659,11 +1687,16 @@ a:hover{color:inherit;}
   .pg3_main_nav_items:nth-child(1),.pg3_main_nav_items:nth-child(2){
     padding-right: 5%;
   }
-.pg3_main_nav_items ul li:nth-child(1){
+  .pg3_main_nav_items ul li:nth-child(1){
   font-size:25px;
   }
 
-
+  .img_block{
+     width:65%;
+   }
+   .contact_big_phone_number p{
+    font-size:15vw;
+   }
   /* end max 992px */
 }
 
@@ -1919,6 +1952,12 @@ a:hover{color:inherit;}
   .pg3_banner_text p{
     font-size:20vw !important;
   }
+  .img_block{
+     width:75%;
+   }
+   .contact_big_phone_number p{
+    padding-right: 5%;
+   }
 
   /* end max 576px */
 }
