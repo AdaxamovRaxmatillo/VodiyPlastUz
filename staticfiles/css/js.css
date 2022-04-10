@@ -13,3 +13,8 @@
 	background: #FFCC01 !important;
 	border: 1px solid #FFCC01 !important;
 }
+
+.checked_catalog{
+	background:#FFCC01 !important;
+	color: white !important;
+}
