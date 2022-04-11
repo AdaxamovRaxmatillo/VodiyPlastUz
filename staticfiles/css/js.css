@@ -24,4 +24,6 @@
 	border-bottom: none !important;
 }
 
-
+.checked_categories_rotate{
+	transform: rotate(90deg);
+}
