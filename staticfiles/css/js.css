@@ -18,3 +18,10 @@
 	background:#FFCC01 !important;
 	color: white !important;
 }
+
+.checked_categories{
+	color:#FFCC01 !important;
+	border-bottom: none !important;
+}
+
+
