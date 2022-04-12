@@ -43,8 +43,11 @@ function checked(e){
         let panel = e.nextElementSibling;
         e.classList = "categories_dcm_block categories_page checked_categories";
         panel.style.maxHeight = panel.scrollHeight + "px";
-        document.querySelector(".right_documents_title_mobile").textContent = e.querySelector('p').textContent
-        document.querySelector(".right_documents_title").textContent = e.querySelector('p').textContent
+        if(document.querySelector(".right_documents_title_mobile") && document.querySelector(".right_documents_title")){
+           document.querySelector(".right_documents_title_mobile").textContent = e.querySelector('p').textContent
+           document.querySelector(".right_documents_title").textContent = e.querySelector('p').textContent 
+        }
+        
         e.querySelectorAll("p")[1].classList = "rotater checked_categories_rotate";
     }
     else{
