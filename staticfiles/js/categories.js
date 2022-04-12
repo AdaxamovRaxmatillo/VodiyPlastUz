@@ -54,3 +54,10 @@ function checked(e){
     }
     
 }
+
+let categories = document.querySelectorAll(".category2_in_categories")
+
+if(categories.length >= 2){
+ categories[categories.length-2].style = "border-bottom:1px solid rgba(255,255,255,0.5);"   
+}
+
