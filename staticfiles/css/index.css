@@ -1681,6 +1681,105 @@ a:hover{color:inherit;}
 .category2_in_items ul li a:hover{
   color: white;
 }
+
+.single_product_block{
+  padding:25px 30px;
+}
+
+.single_product_block{
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.product_image a img{
+  width: 100%;
+}
+.product_image{
+  width:36.5%;
+}
+
+.about_product{
+  width:63.5%;
+  padding:15px 30px;
+}
+
+.product_category_name{
+  color: #FFCC01;
+  font-size: 38px;
+  font-family: buyan  ;
+}
+
+.product_description{
+  font-family: gilroy;
+  font-size:20px;
+  margin:15px 0px 17px 0px;
+}
+
+.product_properties ul li{
+  font-family: gilroy;
+  border-bottom:1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  color: white;
+  font-size:20px;
+}
+
+.product_properties ul li p:nth-child(2){
+  color:rgba(255, 255, 255, 0.5) ;
+}
+
+
+.products_btn_group{
+  display: flex;
+  flex-direction: row;
+}
+
+.download_list_btn{
+  padding-right: 15px;
+}
+
+.ask_btn{
+  padding-left: 15px;
+}
+.download_list_btn,.ask_btn{
+  max-width: 50%;
+}
+
+.download_list_btn a button,.ask_btn a button{
+  display: block;
+  width:100%;
+  font-family: buyan;
+  color: white;
+  border:none;
+  padding:10px 0px;
+  font-size:30px;
+  background: transparent;
+  transition: backgroun;
+  transition:0.5s;
+  cursor: pointer;
+} 
+
+.download_list_btn a button{
+  border: 1px solid white;
+}
+
+.download_list_btn a button:hover{
+   background-color: #FFCC01;
+   border: 1px solid #FFCC01;
+}
+
+.ask_btn a button{
+ background-color: #FFCC01;
+ border: 1px solid #FFCC01;
+}
+
+.ask_btn a button:hover{
+  background: transparent;
+  border: 1px solid white;
+}
+
 /* ens categories page */
 
 /* MEDIAS MAX-WIDTH */
