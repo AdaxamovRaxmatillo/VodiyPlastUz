@@ -507,7 +507,6 @@ function edit_post_img(e){
     let form = new FormData();
     form.append("img_id", data_id)
     form.append("change_img", file);
-    form.append("csrfmiddlewaretoken", "30I8jX4ZtLVJfvxExaHjQuM09Vb72zfpoe0iN9SDQ36TqZfUYpLxX7VUqIAYATJm");
     fetch(``,{
         method: "POST",
         body: form,

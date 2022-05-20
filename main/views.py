@@ -177,7 +177,7 @@ def getcategory3(request):
                             </div>
                         """
         else:
-            result = "<h1 class='no_result'>No result</h1>"
+            result = "<h1 class='no_result'>продукт не найден</h1>"
         return HttpResponse(result)
 
 
@@ -317,6 +317,7 @@ def admin_products(request, cat_id):
         return HttpResponse("<h1 style='text-align:center;'>You are not admin</h1>")
 
 
+@csrf_exempt
 def post(request):
     if request.user.is_authenticated:
         if request.FILES and request.POST:

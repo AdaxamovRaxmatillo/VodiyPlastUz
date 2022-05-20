@@ -14,11 +14,13 @@ document.getElementById("form").addEventListener('submit', e=>{
         if (http.readyState === 4 && http.status === 200) {
             let response = JSON.parse(this.response);
             if(response.status === 404){
+                document.querySelector(".waiter").style.display = "none"
                 document.querySelector(".verification_img").src = `/static/images/ask/shuffle_${response.img_id}.png`
             }
             else if(response.status === 200){
                 document.querySelector(".ask_alert").style = "transform:translateY(0);"
                 if(response.assignment === 200){
+                    document.querySelector(".waiter").style.display = "none"
                     status.style = "color:green;"
                     status.innerHTML = '<i class="bi bi-check2"></i><br>Успех'
                     document.querySelector(".status_text").innerHTML = "Мы свяжемся с вами"
@@ -34,6 +36,7 @@ document.getElementById("form").addEventListener('submit', e=>{
                     },3000)
                 }
                 else if(response.assignment === 404){
+                    document.querySelector(".waiter").style.display = "none"
                     status.style = "color:red;"
                     status.innerHTML = '<i class="bi bi-exclamation-triangle-fill"></i><br>этот номер был введен ранее'
                     document.querySelector(".status_text").innerHTML = "мы свяжемся с вами, прежде чем вы войдете"
@@ -41,6 +44,7 @@ document.getElementById("form").addEventListener('submit', e=>{
             }
         }
     }
+    document.querySelector(".waiter").style.display = "flex"
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     http.send(`name=${name}&number=${number}&city=${city}&email=${email}&category=${category}&message=${message}&verification=${val}`)
 })

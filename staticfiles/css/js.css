@@ -27,3 +27,9 @@
 .checked_categories_rotate{
 	transform: rotate(90deg);
 }
+
+.categories_height{
+max-height:100% !important;
+transition: max-height 1s ease-out;
+}
+

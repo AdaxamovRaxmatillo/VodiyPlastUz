@@ -302,12 +302,74 @@ maintextwiper2.on('slideChangeTransitionEnd', function() {
 
 
 function checked_category(e){
-    if(e.className == "category_frames_items"){
+      document.querySelectorAll(".category_frames_items").forEach(function(z){
+        z.className = "category_frames_items"
+        z.querySelector(".category_checked").style = "display:none;"
+      })
+      if(e.className == "category_frames_items"){
         e.classList = "category_frames_items checked_category"
         e.querySelector(".category_checked").style = "display:inherit;"
-    }
-    else{
+      }
+      else if(e.classList == "category_frames_items checked_category"){
         e.className = "category_frames_items"
         e.querySelector(".category_checked").style = "display:none;"
+      }
+}
+
+document.querySelectorAll(".category_under").forEach(function(e){
+    e.addEventListener("click",function(){
+        window.location.href = e.getAttribute("data-url")
+    })
+})
+
+let form = document.querySelector(".form");
+
+form.addEventListener("submit", e=>{
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let number = document.getElementById("num").value;
+    let message = document.getElementById("message").value;
+    let bind = document.querySelector(".checked_category");
+    let city = document.querySelector(".city").value;
+    let status = document.querySelector(".status");
+    if(typeof(bind) != 'undefined' && bind != null){
+        var http = new XMLHttpRequest();
+        http.open('POST', '', true)
+        http.onreadystatechange = function(){
+            if (http.readyState === 4 && http.status === 200) {
+                document.querySelector(".ask_alert").style = "transform:translateY(0);"
+                let response = JSON.parse(this.response)
+                if(response.status == 200){
+                    bind.className = "category_frames_items"
+                    bind.querySelector(".category_checked").style = "display:none;"
+                    document.getElementById("name").value = ""
+                    document.getElementById("num").value = ""
+                    document.getElementById("message").value = ""
+                    status.style = "color:green;"
+                    status.innerHTML = '<i class="bi bi-check2"></i><br>Успех'
+                    document.querySelector(".status_text").innerHTML = "Мы свяжемся с вами"
+                    history.replaceState(null, null, ' ');
+                    document.querySelector(".not_selected_text").style.display = "none";
+                    document.querySelector(".waiter").style.display = "none"
+                }
+                else{
+                    status.style = "color:red;"
+                    status.innerHTML = '<i class="bi bi-exclamation-triangle-fill"></i><br>этот номер был введен ранее'
+                    document.querySelector(".status_text").innerHTML = "мы свяжемся с вами, прежде чем вы войдете"
+                    document.querySelector(".waiter").style.display = "none"
+                }
+            }
+        }
+        document.querySelector(".waiter").style.display = "flex"
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+        http.send(`name=${name}&number=${number}&city=${city}&message=${message}&bind=${bind.getAttribute("data-category")}`)
     }
+    else{
+        document.querySelector(".not_selected_text").style.display = "block"
+        location.hash = '#category_form'
+    }
+})
+
+function hidden_alert(e){
+    e.style = "transform:translateY(-100%);"
 }
